@@ -1,19 +1,18 @@
 terraform {
+  required_version = ">= 1.1"
+
   required_providers {
-    tfe = {
-      source  = "hashicorp/tfe"
-      version = "0.25.3"
-    }
     aws = {
       source  = "hashicorp/aws"
-      version = "3.42.0"
+      version = ">= 4.0"
     }
-
+    tfe = {
+      source  = "hashicorp/tfe"
+      version = ">= 0.35"
+    }
+    time = {
+      source  = "hashicorp/time"
+      version = ">= 0.8"
+    }
   }
-}
-provider "aws" {
-  region = "us-east-1"
-}
-provider "tfe" {
-  token = var.tf_token
 }
